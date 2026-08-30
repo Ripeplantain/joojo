@@ -23,8 +23,6 @@
 # misc
 .DS_Store
 *.pem
-.claude/
-/agent/
 
 # debug
 npm-debug.log*
@@ -41,3 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# sanity typegen - committed for Vercel builds
+# sanity.types.ts
