@@ -1,3 +1,4 @@
+import { Show, SignInButton, SignUpButton, UserButton } from "@clerk/nextjs";
 import Link from "next/link";
 
 type IconName =
@@ -301,14 +302,35 @@ export default function Home() {
             <button type="button" className="grid h-9 w-9 place-items-center rounded-[8px] text-[#071124] transition-colors hover:bg-[#f1f5f9] focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-[#2563eb]" aria-label="Notifications">
               <Icon name="bell" className="h-6 w-6" />
             </button>
-            <button type="button" className="relative h-10 w-10 overflow-hidden rounded-full bg-[#111827] focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-[#2563eb]" aria-label="Profile">
-              <span className="absolute inset-0 bg-[linear-gradient(155deg,#f8d3b0_0_44%,#1f2937_45%_100%)]" />
-              <span className="absolute left-[15px] top-[9px] h-5 w-5 rounded-full bg-[#f6bd91]" />
-              <span className="absolute left-[18px] top-[14px] h-1 w-1 rounded-full bg-[#111827]" />
-              <span className="absolute left-[26px] top-[14px] h-1 w-1 rounded-full bg-[#111827]" />
-              <span className="absolute left-[18px] top-[29px] h-8 w-8 rounded-t-full bg-[#0f172a]" />
-              <span className="absolute left-[13px] top-[4px] h-7 w-8 rounded-t-full bg-[#111827]" />
-            </button>
+            <Show when="signed-out">
+              <div className="flex items-center gap-3">
+                <SignInButton mode="redirect">
+                  <button
+                    type="button"
+                    className="h-10 rounded-[8px] px-3 text-[14px] font-semibold text-[#071124] transition-colors hover:bg-[#f1f5f9] focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-[#2563eb]"
+                  >
+                    Sign in
+                  </button>
+                </SignInButton>
+                <SignUpButton mode="redirect">
+                  <button
+                    type="button"
+                    className="h-10 rounded-[8px] bg-[#071f55] px-4 text-[14px] font-semibold text-white transition-colors hover:bg-[#0b2b70] focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-[#2563eb]"
+                  >
+                    Sign up
+                  </button>
+                </SignUpButton>
+              </div>
+            </Show>
+            <Show when="signed-in">
+              <UserButton
+                appearance={{
+                  elements: {
+                    avatarBox: "h-10 w-10",
+                  },
+                }}
+              />
+            </Show>
           </div>
         </nav>
       </header>
