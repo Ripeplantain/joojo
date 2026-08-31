@@ -14,8 +14,8 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "joojo Design System",
-  description: "A unified design language for the joojo learning platform.",
+  title: "joojo | Learn clearly",
+  description: "Find the right lessons across your courses with joojo.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
