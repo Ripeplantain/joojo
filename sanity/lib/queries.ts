@@ -41,7 +41,7 @@ export const COURSE_BY_SLUG_QUERY = defineQuery(`
         title,
         slug,
         videoUrl,
-        poster,
+        thumbnail,
         duration,
         freePreview,
         studentCount
@@ -56,7 +56,7 @@ export const LESSON_BY_SLUG_QUERY = defineQuery(`
     title,
     slug,
     videoUrl,
-    poster,
+    thumbnail,
     duration,
     freePreview,
     studentCount,

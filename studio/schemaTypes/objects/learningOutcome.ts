@@ -12,6 +12,9 @@ const ICON_OPTIONS = [
   {title: 'Video', value: 'video'},
   {title: 'Book', value: 'book'},
   {title: 'Sparkle', value: 'sparkle'},
+  {title: 'Sparkles', value: 'sparkles'},
+  {title: 'Puzzle', value: 'puzzle'},
+  {title: 'Workflow', value: 'workflow'},
 ]
 
 export const learningOutcome = defineType({

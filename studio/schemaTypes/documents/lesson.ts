@@ -28,8 +28,8 @@ export const lesson = defineType({
       validation: (rule) => rule.required().uri({scheme: ['http', 'https']}),
     }),
     defineField({
-      name: 'poster',
-      title: 'Poster',
+      name: 'thumbnail',
+      title: 'Thumbnail',
       type: 'image',
       options: {hotspot: true},
       fields: [
@@ -122,6 +122,6 @@ export const lesson = defineType({
     }),
   ],
   preview: {
-    select: {title: 'title', media: 'poster'},
+    select: {title: 'title', media: 'thumbnail'},
   },
 })
